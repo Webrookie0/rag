@@ -1,0 +1,93 @@
+[
+  {
+    "id": "num_1_bleu_ende",
+    "category": "numerical",
+    "query": "What BLEU score does the Transformer big model achieve on the WMT 2014 English-to-German translation task in Table 2?",
+    "expected_modality": "table",
+    "target_page": 8,
+    "ground_truth_answer": "The Transformer (big) achieves a BLEU score of 28.4 on WMT 2014 English-to-German.",
+    "required_facts": ["28.4", "WMT 2014"]
+  },
+  {
+    "id": "num_2_bleu_enfr",
+    "category": "numerical",
+    "query": "What BLEU score does the Transformer establish on WMT 2014 English-to-French, and what was the training time and GPU count?",
+    "expected_modality": "table",
+    "target_page": 8,
+    "ground_truth_answer": "41.8 BLEU score, trained for 3.5 days on 8 GPUs.",
+    "required_facts": ["41.8", "3.5 days", "8 GPUs"]
+  },
+  {
+    "id": "num_3_training_flops",
+    "category": "numerical",
+    "query": "What is the training cost in FLOPs for the base Transformer model on English-to-German in Table 2?",
+    "expected_modality": "table",
+    "target_page": 8,
+    "ground_truth_answer": "3.3 · 10^18 FLOPs (or 3.3e18).",
+    "required_facts": ["3.3", "1018"]
+  },
+  {
+    "id": "num_4_table3_hyperparams",
+    "category": "numerical",
+    "query": "In Table 3 model variations, what are the values of d_model, d_ff, and number of heads h for the base model?",
+    "expected_modality": "table",
+    "target_page": 9,
+    "ground_truth_answer": "d_model = 512, d_ff = 2048, and h = 8 heads (with d_k = d_v = 64).",
+    "required_facts": ["512", "2048", "8"]
+  },
+  {
+    "id": "num_5_label_smoothing",
+    "category": "numerical",
+    "query": "What label smoothing value epsilon_ls is used during training?",
+    "expected_modality": "text",
+    "target_page": 7,
+    "ground_truth_answer": "Label smoothing value of epsilon_ls = 0.1 was used during training.",
+    "required_facts": ["0.1"]
+  },
+  {
+    "id": "term_1_sdpa_formula",
+    "category": "terminology",
+    "query": "What is the mathematical equation for Scaled Dot-Product Attention in Section 3.2.1?",
+    "expected_modality": "text",
+    "target_page": 4,
+    "ground_truth_answer": "Attention(Q, K, V) = softmax((QK^T) / sqrt(d_k)) V",
+    "required_facts": ["softmax", "sqrt(d_k)"]
+  },
+  {
+    "id": "term_2_complexity_per_layer",
+    "category": "terminology",
+    "query": "What is the computational complexity per layer and maximum path length for Self-Attention according to Table 1?",
+    "expected_modality": "table",
+    "target_page": 6,
+    "ground_truth_answer": "Complexity per layer is O(n^2 · d) and maximum path length is O(1).",
+    "required_facts": ["O(n2 · d)", "O(1)"]
+  },
+  {
+    "id": "term_3_ffn_equation",
+    "category": "terminology",
+    "query": "What is the formula for the position-wise feed-forward networks (FFN) in Section 3.3?",
+    "expected_modality": "text",
+    "target_page": 5,
+    "ground_truth_answer": "FFN(x) = max(0, xW1 + b1)W2 + b2",
+    "required_facts": ["max(0", "W1", "W2"]
+  },
+  {
+    "id": "vis_1_positional_encoding",
+    "category": "visual",
+    "query": "In the Transformer architecture diagram (Figure 1), where is the Positional Encoding injected?",
+    "expected_modality": "image",
+    "target_page": 3,
+    "ground_truth_answer": "Positional Encoding is added directly to the input embeddings at the bottom of both the encoder and decoder stacks.",
+    "required_facts": ["input embeddings", "encoder", "decoder"]
+  },
+  {
+    "id": "vis_2_sdpa_layers",
+    "category": "visual",
+    "query": "In Figure 2, what operations are depicted inside the Scaled Dot-Product Attention flow before the Softmax?",
+    "expected_modality": "image",
+    "target_page": 4,
+    "ground_truth_answer": "MatMul of Q and K, followed by Scale, followed by an optional Mask.",
+    "required_facts": ["MatMul", "Scale", "Mask"]
+  }
+]
+
