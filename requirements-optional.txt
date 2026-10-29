@@ -1,6 +1,0 @@
-# Core lessons require only Python's standard library.
-# Use Python 3.11 or 3.12 for the optional machine-learning track.
-# These are compatibility ranges, not a reproducible lockfile.
-sentence-transformers>=5,<6
-# Optional approximate vector search lesson:
-faiss-cpu>=1.8,<2
