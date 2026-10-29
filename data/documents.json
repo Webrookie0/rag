@@ -1,0 +1,42 @@
+[
+  {
+    "id": "refunds", "title": "Atlas refund policy", "tenant": "alpha", "version": "2026-01", "source": "atlas/refunds.md",
+    "text": "# Refund eligibility\nAnnual Atlas subscriptions are refundable within 30 days of the initial purchase. Monthly subscriptions are non-refundable. Renewals are non-refundable unless required by applicable law.\n\n# Request process\nRequest an annual subscription refund from the billing page and include the invoice number. Approved refunds return to the original payment method within 5 business days. The Finance team handles refund exceptions."
+  },
+  {
+    "id": "cancellation", "title": "Atlas cancellation", "tenant": "alpha", "version": "2026-01", "source": "atlas/cancellation.md",
+    "text": "# Cancel a subscription\nOpen Settings, select Billing, and choose Cancel subscription. Cancellation stops the next renewal and does not automatically issue a refund. Access continues until the end of the paid billing period.\n\n# Data after cancellation\nWorkspace data is retained for 60 days after the subscription ends. Export workspace data before this retention period expires. A workspace administrator can request earlier deletion."
+  },
+  {
+    "id": "authentication", "title": "Atlas API authentication", "tenant": "alpha", "version": "2026-02", "source": "atlas/authentication.md",
+    "text": "# API keys\nCreate an API key in Settings under Developer access. Send the key in the Authorization header as Bearer followed by the key. Never put API keys in URL query parameters.\n\n# Rotation\nTo rotate an API key, create a replacement key, update clients, verify requests, and revoke the old key. Revoked keys cannot be restored. Error AUTH_401 means the API key is missing, expired, or invalid."
+  },
+  {
+    "id": "rate_limits", "title": "Atlas API rate limits", "tenant": "alpha", "version": "2026-02", "source": "atlas/rate_limits.md",
+    "text": "# Request limits\nThe Atlas Starter plan permits 60 requests per minute. The Pro plan permits 600 requests per minute. Limits are enforced per workspace, across all its API keys.\n\n# Retry behavior\nHTTP 429 means the workspace has exceeded its request limit. Wait for the duration in the Retry-After header before retrying. Use exponential backoff with jitter for repeated transient failures."
+  },
+  {
+    "id": "backups", "title": "Atlas backup and recovery", "tenant": "alpha", "version": "2026-02", "source": "atlas/backups.md",
+    "text": "# Backup schedule\nAtlas creates an encrypted workspace backup every 24 hours. Backups are retained for 14 days. The Infrastructure team operates the backup service.\n\n# Restore process\nOnly workspace administrators can request a restore. Contact support with the workspace ID and the desired backup date. A restore replaces the workspace contents with the selected backup."
+  },
+  {
+    "id": "security", "title": "Atlas security and permissions", "tenant": "alpha", "version": "2026-02", "source": "atlas/security.md",
+    "text": "# Roles\nAtlas has Viewer, Editor, and Administrator roles. Viewers can read documents. Editors can modify documents. Administrators can manage billing, members, API keys, and restore requests.\n\n# Encryption\nAtlas encrypts stored workspace data using AES-256. Network connections require TLS. The Security team reviews access control incidents. Access checks must happen before documents reach a language model."
+  },
+  {
+    "id": "export", "title": "Atlas data export", "tenant": "alpha", "version": "2026-02", "source": "atlas/export.md",
+    "text": "# Export formats\nAdministrators can export workspace documents as Markdown or JSON from Settings under Data export. Exports preserve document titles and creation timestamps.\n\n# Export limits\nAn export can contain up to 10000 documents. Larger workspaces should use multiple date-filtered exports. Export archives remain available for download for 7 days."
+  },
+  {
+    "id": "teams", "title": "Atlas team ownership", "tenant": "alpha", "version": "2026-02", "source": "atlas/teams.md",
+    "text": "# Service ownership\nThe Infrastructure team owns the backup service. The backup service depends on object storage. The Storage team owns object storage.\n\n# Escalation\nThe Finance team handles subscription refund exceptions. The Security team handles access control incidents. For a backup failure caused by object storage, escalate to the Storage team."
+  },
+  {
+    "id": "webhooks", "title": "Atlas webhooks", "tenant": "alpha", "version": "2026-02", "source": "atlas/webhooks.md",
+    "text": "# Webhook delivery\nAtlas sends a webhook when an export is ready. Verify the signature before processing a webhook payload. Store the event ID to avoid processing duplicate deliveries.\n\n# Delivery retries\nFailed webhook deliveries are retried for 24 hours. A successful HTTP 2xx response acknowledges an event. Delivery order is not guaranteed."
+  },
+  {
+    "id": "beta_refunds", "title": "Beta private refund policy", "tenant": "beta", "version": "2026-01", "source": "beta/private_refunds.md",
+    "text": "# Private enterprise contract\nThe Beta tenant has a private annual subscription refund window of 90 days. This negotiated policy applies only to Beta and must never be returned to Alpha users."
+  }
+]
